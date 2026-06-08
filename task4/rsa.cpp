@@ -36,6 +36,7 @@ uint64_t inverseEgcd(uint64_t c, uint64_t m) {
     uint64_t r = m % c;
 
     cout << "\t" << "r" << "\t" << "u" << "\t" << "q" << endl;
+    cout << "----------------------------" << endl;
     cout << "\t" << m << "\t" << u1 << "\t" << "-" << endl;
     cout << "\t" << c << "\t" << u2 << "\t" << "-" << endl;
 
@@ -61,7 +62,7 @@ uint64_t inverseEgcd(uint64_t c, uint64_t m) {
 vector<uint64_t> encryption(string text, uint64_t d, uint64_t N) {
     vector<uint64_t> res;
     cout << "Символ" << "\t" << "Номер" << "\t" << "Результат шифрования" << endl;
-
+    cout << "------------------------------------------" << endl;
     for (int i = 0; i < text.size(); i++) {
         uint64_t encryptedNumber = (unsigned char)text[i];
         uint64_t encryptedChar = modBinary(encryptedNumber, d, N);
@@ -75,11 +76,11 @@ vector<uint64_t> encryption(string text, uint64_t d, uint64_t N) {
 
 string decryption(vector<uint64_t> text, uint64_t c, uint64_t N) {
     string res;
-    cout << "Номер" << "\t" << "Дешифровка" << "\t" << "Символ" << endl;
-
+    cout << "Номер" << "\t" << "Расшифровка" << "\t" << "Символ" << endl;
+    cout << "---------------------------------" << endl;
     for (int i = 0; i < text.size(); i++) {
         uint64_t decryptedNumber = modBinary(text[i], c, N);
-        char decryptedChar = (char)(unsigned char)decryptedNumber;
+        char decryptedChar = (char)decryptedNumber;
 
         cout << text[i] << "\t" << decryptedNumber << "\t" << decryptedChar << endl;
         res.push_back(decryptedChar);

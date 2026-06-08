@@ -20,9 +20,9 @@ int main() {
 
     uint64_t cA, mA;
     cout << "Вычисление c^(-1) mod m" << endl;
-    cout << "Введите c: " << endl << ">>> ";
+    cout << "Введите c: ";
     cin >> cA;
-    cout << "Введите m: " << endl << ">>> ";
+    cout << "Введите m: ";
     cin >> mA;
     uint64_t dA = inverseEgcd(cA, mA);
     if (!dA) return 0;

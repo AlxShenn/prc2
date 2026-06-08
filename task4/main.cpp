@@ -15,7 +15,8 @@ int main() {
     #endif
     
     uint64_t p, q;
-
+    cout << "=== Криптопротокол RSA === " << endl;
+    cout << " - Генерация открытого ключа - " << endl;
     cout << "Введите простые числа p и q: " << endl << ">>> ";
     cin >> p >> q;
     uint64_t N = p * q;
@@ -32,18 +33,18 @@ int main() {
         return 0;
     }
 
-    cout << "Вычисление закрытого ключа: d^(-1) mod phi = cB" << endl;
+    cout << "Вычисление закрытого ключа: d^(-1) mod phi = c" << endl;
     uint64_t c = inverseEgcd(d, phi);
     cout << d << "^(-1) mod " << phi << " = " << c << endl;
 
     cout << "\nОткрытый ключ (d, N): (" << d << ", " << N << ")" << endl;
-    cout << "Закрытый ключ (cB, phi): (" << c << ", " << phi << ")" << endl;
+    cout << "Закрытый ключ (c, N): (" << c << ", " << N << ")" << endl;
 
     string text;
     cout << "Введите текст для шифрования: " << endl << ">>> ";
     getline(cin, text);
-    
-    std::vector<uint64_t> encrypted = encryption(text, d, N);
+
+    vector<uint64_t> encrypted = encryption(text, d, N);
 
     cout << "\nЗашифрованный текст:\n";
     for (const auto& ch : encrypted) {
@@ -55,6 +56,8 @@ int main() {
 
     cout << "\nРасшифрованный текст:\n";
     cout << decrypted << endl;
-
+    
+    cout << "Завершение программы " << endl;
+    
     return 0;
 }

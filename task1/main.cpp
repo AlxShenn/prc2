@@ -21,6 +21,6 @@ int main() {
     cout << "Ферма: " << base << "^" << power << " mod" << modulo << 
         " = " << modFermat(base, power, modulo) << endl;
     cout << "Бинарный алгоритм: " << base << "^" << power << " mod" << modulo << 
-        " = " << modBinary(base, power, modulo);
+        " = " << modBinary(base, power, modulo) << endl;
 
 }

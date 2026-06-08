@@ -30,4 +30,6 @@ uint64_t egcd(uint64_t c, uint64_t m) {
     }
 
     uint64_t d = (v3 > 0)? v3: v3 + m0;
+
+	return d;
 }
