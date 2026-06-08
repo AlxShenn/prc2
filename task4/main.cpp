@@ -26,7 +26,7 @@ int main() {
     cout << "Введите публичный ключ d: " << endl << ">>> ";
     uint64_t d;
     cin >> d;
-
+    cin.ignore();
     if (gcd(d, phi) != 1) {
         cout << "Ошибка: публичный ключ d и фунукция Эйлера phi(N) должны быть взаимно простыми!" << endl;
         return 0;
@@ -42,13 +42,14 @@ int main() {
     string text;
     cout << "Введите текст для шифрования: " << endl << ">>> ";
     getline(cin, text);
-
+    
     std::vector<uint64_t> encrypted = encryption(text, d, N);
 
     cout << "\nЗашифрованный текст:\n";
     for (const auto& ch : encrypted) {
         cout << ch << " ";
     }
+    cout << endl;
 
     string decrypted = decryption(encrypted, c, N);
 
